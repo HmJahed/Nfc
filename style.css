@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #eef2f5; /* বডির ব্যাকগ্রাউন্ড হালকা গ্রে */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* উপর থেকে শুরু হবে */
+    min-height: 100vh;
+    padding: 20px 0; /* উপরে নিচে একটু স্পেস */
+}
+
+/* --- কার্ড ডিজাইন (মোবাইল অ্যাপ লুক) --- */
+.card-container {
+    background: #ffffff;
+    width: 100%;
+    /* এই লাইনটাই আসল: মোবাইলে ১০০% কিন্তু পিসিতে ৪২০ এর বেশি হবে না */
+    max-width: 420px; 
+    
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* সুন্দর শ্যাডো */
+    position: relative;
+    border-radius: 20px; /* কোনা গোল */
+    overflow: hidden;
+    margin: 0 auto; /* মাঝখানে থাকবে */
+    padding-bottom: 40px;
+}
+
+/* --- হেডার --- */
+.header-section {
+    position: relative;
+    height: 380px; 
+    width: 100%;
+}
+
+.user-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ছবি যেন মাথা না কাটে */
+    object-position: top center; 
+    display: block;
+}
+
+/* --- ওয়েভ --- */
+.wave-shape {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 1;
+}
+
+.wave-shape svg {
+    display: block;
+    width: 100%;
+    height: 140px;
+}
+
+/* --- লোগো --- */
+.logo-box {
+    position: absolute;
+    bottom: 40px; 
+    right: 25px;
+    width: 80px;
+    height: 80px;
+    background: #000;
+    border-radius: 50%; /* গোল */
+    overflow: hidden;
+    z-index: 10;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- ইনফো --- */
+.info-section {
+    padding: 0 25px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.name-wrapper {
+    border-left: 2px dotted #000;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.name {
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.slogan {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+/* --- কন্টাক্ট লিস্ট --- */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease; 
+    padding: 10px;
+    border-radius: 12px;
+    width: 100%;
+    border: 1px solid transparent;
+}
+
+.contact-item:hover {
+    background-color: #f0fdf4;
+    border-color: #d1fae5;
+    transform: translateX(5px);
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background-color: #2ecc71; /* সবুজ আইকন */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.contact-item:hover .icon-box {
+    transform: scale(1.1);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-info {
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sub-info {
+    color: #888;
+    font-size: 13px;
+}
+
+/* --- বাটন --- */
+.action-btn-container {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.save-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.save-btn:active {
+    transform: scale(0.98);
+}
+
+/* --- শুধুমাত্র মোবাইলে ফুল স্ক্রিন করার জন্য --- */
+@media (max-width: 450px) {
+    body {
+        padding: 0; /* মোবাইলে প্যাডিং সরিয়ে দেওয়া হলো */
+        background-color: #fff; /* ব্যাকগ্রাউন্ড সাদা */
+    }
+    .card-container {
+        border-radius: 0; /* কোনা সোজা */
+        box-shadow: none; /* শ্যাডো অফ */
+        min-height: 100vh; /* ফুল হাইট */
+    }
+}

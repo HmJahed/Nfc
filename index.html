@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Jahed - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="header-section">
+            <img src="pp for nfc.jpg" alt="User Photo" class="user-photo">
+            
+            <div class="wave-shape">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#2ecc71" fill-opacity="1" 
+                          d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+
+                    <path fill="#ffffff" fill-opacity="1" 
+                          d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                          transform="translate(0, 21)">
+                    </path>
+                </svg>
+            </div>
+            
+            <div class="logo-box">
+                <img src="Logo.png" alt="Logo">
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="name-wrapper">
+                <h2 class="name">Mohammad Jahed</h2>
+            </div>
+            <p class="slogan">Show must go on</p>
+
+            <div class="contact-list">
+                <a href="mailto:Jahedhm@gmail.com" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="details">
+                        <span class="main-info">Jahedhm@gmail.com</span>
+                        <span class="sub-info">personal</span>
+                    </div>
+                </a>
+                <a href="tel:+8801853120727" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div class="details"><span class="main-info">+880 1853 120727</span></div>
+                </a>
+                <a href="https://facebook.com/m.jahed24" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="details"><span class="main-info">Facebook</span></div>
+                </a>
+                <a href="https://wa.me/8801853120727" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="details"><span class="main-info">Whatsapp</span></div>
+                </a>
+                <a href="https://t.me/HmJahed" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-paper-plane"></i></div>
+                    <div class="details"><span class="main-info">Telegram</span></div>
+                </a>
+                <a href="https://maps.google.com/?q=GQVX+VXV, Charia" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="details">
+                        <span class="main-info">Hathazari. Chittagong</span>
+                        <span class="sub-info">home</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="action-btn-container">
+                <button onclick="saveContact()" class="save-btn">
+                    <i class="fa-solid fa-address-book"></i> SAVE CONTACT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveContact() {
+            var vCardData = "BEGIN:VCARD\nVERSION:3.0\nFN:Mohammad Jahed\nTEL;TYPE=CELL:+8801853120727\nEMAIL:Jahedhm@gmail.com\nEND:VCARD";
+            var blob = new Blob([vCardData], { type: "text/vcard" });
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement("a");
+            link.href = url;
+            link.download = "Mohammad_Jahed.vcf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
